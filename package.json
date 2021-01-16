@@ -1,6 +1,6 @@
 {
   "name": "mistify",
-  "version": "0.0.1-alpha.8",
+  "version": "0.0.1-alpha.9",
   "private": false,
   "license": "MIT",
   "author": "Steve Calverley <emailme@tameablemist.com> (http://mistify.tameablemist.com/)",
@@ -11,6 +11,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-package": "vue-cli-service build --target lib --name mistify ./src/mistify.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6006",
