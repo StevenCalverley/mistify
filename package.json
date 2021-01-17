@@ -1,6 +1,6 @@
 {
   "name": "mistify",
-  "version": "0.0.1-alpha.9",
+  "version": "0.0.1-alpha.10",
   "private": false,
   "license": "MIT",
   "author": "Steve Calverley <emailme@tameablemist.com> (http://mistify.tameablemist.com/)",
@@ -11,6 +11,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "prepublishOnly": "$npm_execpath run build-package",
     "build-package": "vue-cli-service build --target lib --name mistify ./src/mistify.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "@storybook/addon-actions": "^6.1.14",
     "@storybook/addon-essentials": "^6.1.14",
