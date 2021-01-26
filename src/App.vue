@@ -12,6 +12,22 @@
         placeholder="Test Me"
         :state="!hasError"
       />
+      <p>Input: {{ input }}</p>
+      <hr class="my-4" />
+      <m-input-group label="Test Label" description="Test Description">
+        <m-input
+          id="test2"
+          v-model="input"
+          placeholder="Test Me"
+          :state="!hasError"
+        />
+      </m-input-group>
+      <p>Input: {{ input }}</p>
+      <hr class="my-4" />
+      <m-input-group label="Test Label" description="Test Description">
+        <m-select id="test-select" v-model="select" :options="options" />
+      </m-input-group>
+      <p>Selected: {{ select }}</p>
       <m-button class="mt-4" id="test">Test</m-button>
       <MIcon>
         <path
@@ -29,6 +45,8 @@ export default {
   name: 'App',
   data: () => ({
     input: '',
+    select: '',
+    options: ['Option 1', 'Option 2'],
   }),
   computed: {
     hasError() {
