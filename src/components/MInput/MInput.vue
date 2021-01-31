@@ -4,7 +4,7 @@
       :id="id"
       :type="type"
       :placeholder="placeholder"
-      class="block w-full text-gray-700 rounded shadow sm:text-sm sm:leading-5 placeholder-gray-500 border-gray-400 focus:ring-2"
+      class="block w-full text-gray-700 rounded shadow sm:text-sm sm:leading-5 placeholder-gray-400 border-gray-300 focus:ring-2"
       :class="[
         {
           'focus:border-blue-600 focus:ring-blue-600': state === null,
