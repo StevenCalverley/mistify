@@ -4,12 +4,13 @@
       :id="id"
       :type="type"
       :placeholder="placeholder"
-      class="block w-full text-gray-700 rounded sm:text-sm sm:leading-5 placeholder-gray-500 border-gray-300 focus:ring-2"
+      class="block w-full text-gray-700 rounded shadow sm:text-sm sm:leading-5 placeholder-gray-400 border-gray-300 focus:ring-2"
       :class="[
         {
           'focus:border-blue-600 focus:ring-blue-600': state === null,
           'border-red-400 text-red-700 focus:border-red-400 focus:ring-red-400 placeholder-red-400':
             state !== null && !state,
+          'pl-10': alignIcon === 'left',
         },
       ]"
       :value="value"
@@ -18,7 +19,7 @@
     />
     <div
       class="absolute inset-y-0 right-0 flex items-center pr-2 text-red-600"
-      v-if="state !== null && !state"
+      v-if="state !== null && !$slots.default && !state"
     >
       <MIcon solid>
         <path
@@ -27,6 +28,18 @@
           clip-rule="evenodd"
         ></path>
       </MIcon>
+    </div>
+    <div
+      v-if="$slots.default"
+      class="absolute inset-y-0 flex items-center"
+      :class="[
+        { 'left-0 pl-2': alignIcon === 'left' },
+        { 'right-0 pr-2': alignIcon === 'right' },
+        { 'text-gray-400': state === null },
+        { 'text-red-400': state !== null && !state },
+      ]"
+    >
+      <slot />
     </div>
   </div>
 </template>
@@ -82,6 +95,11 @@ export default {
     state: {
       type: Boolean,
       default: null,
+    },
+    alignIcon: {
+      type: String,
+      default: 'right',
+      validator: value => ['left', 'right'].indexOf(value) !== -1,
     },
   },
 };
