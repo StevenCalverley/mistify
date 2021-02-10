@@ -6,6 +6,7 @@ import { IconPlugin } from './MIcon';
 import { InputPlugin } from './MInput';
 import { InputGroupPlugin } from './MInputGroup';
 import { SelectPlugin } from './MSelect';
+import { CheckboxPlugin } from './MCheckbox';
 
 // Main plugin to install all component group plugins
 export const componentsPlugin = /*#__PURE__*/ pluginFactory({
@@ -16,5 +17,6 @@ export const componentsPlugin = /*#__PURE__*/ pluginFactory({
     InputPlugin,
     InputGroupPlugin,
     SelectPlugin,
+    CheckboxPlugin,
   },
 });
