@@ -1,11 +1,12 @@
 <template>
-  <div class="relative w-full">
+  <div>
     <label
       v-if="label"
       :for="labelFor"
-      class="text-sm font-semibold text-gray-600"
-      >{{ label }}</label
+      class="block text-sm font-medium text-gray-700"
     >
+      {{ label }}
+    </label>
     <slot></slot>
     <p
       v-if="state === false && invalidFeedback"

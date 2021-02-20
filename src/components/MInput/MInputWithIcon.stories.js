@@ -46,5 +46,5 @@ Default.args = {
   id: 'input',
   type: 'text',
   placeholder: 'Default Text Input',
-  state: null,
+  state: 'error',
 };

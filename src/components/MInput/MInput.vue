@@ -1,14 +1,14 @@
 <template>
-  <div class="relative flex">
+  <div class="mt-1 relative rounded-md shadow-sm">
     <input
       :id="id"
       :type="type"
       :placeholder="placeholder"
-      class="block w-full text-gray-700 rounded shadow sm:text-sm sm:leading-5 placeholder-gray-400 border-gray-300 focus:ring-2"
+      class="shadow-sm block w-full sm:text-sm border-gray-300 rounded-md"
       :class="[
         {
-          'focus:border-blue-600 focus:ring-blue-600': state === null,
-          'border-red-400 text-red-700 focus:border-red-400 focus:ring-red-400 placeholder-red-400':
+          'focus:ring-blue-500 focus:border-blue-500': state === null,
+          'border-red-300 text-red-900 focus:border-red-500 focus:ring-red-500 placeholder-red-300':
             state !== null && !state,
           'pl-10': alignIcon === 'left',
         },
@@ -18,7 +18,7 @@
       v-bind="$attrs"
     />
     <div
-      class="absolute inset-y-0 right-0 flex items-center pr-2 text-red-600"
+      class="absolute inset-y-0 right-0 flex items-center pr-2 text-red-500"
       v-if="state !== null && !$slots.default && !state"
     >
       <MIcon solid>
@@ -31,12 +31,12 @@
     </div>
     <div
       v-if="$slots.default"
-      class="absolute inset-y-0 flex items-center"
+      class="absolute inset-y-0 flex items-center pointer-events-none"
       :class="[
-        { 'left-0 pl-2': alignIcon === 'left' },
-        { 'right-0 pr-2': alignIcon === 'right' },
+        { 'left-0 pl-3': alignIcon === 'left' },
+        { 'right-0 pr-3': alignIcon === 'right' },
         { 'text-gray-400': state === null },
-        { 'text-red-400': state !== null && !state },
+        { 'text-red-500': state !== null && !state },
       ]"
     >
       <slot />
